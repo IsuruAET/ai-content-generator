@@ -1,4 +1,4 @@
-import { Box, Fade } from "@mui/material";
+import { Box } from "@mui/material";
 import ResponseCard from "./ResponseCard";
 
 interface QuestionResponse {
@@ -26,15 +26,14 @@ export default function ResponseList({
       }}
     >
       {responses.map((item, index) => (
-        <Fade in key={index}>
-          <ResponseCard
-            question={item.question}
-            response={item.response}
-            index={index}
-            copiedIndex={copiedIndex}
-            onCopy={onCopy}
-          />
-        </Fade>
+        <ResponseCard
+          key={index}
+          question={item.question}
+          response={item.response}
+          index={index}
+          copiedIndex={copiedIndex}
+          onCopy={onCopy}
+        />
       ))}
     </Box>
   );
